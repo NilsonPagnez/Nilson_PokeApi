@@ -17,6 +17,7 @@ html {
 body {
   height: 100vh;
   width: 100%;
+  padding-top: 4%;
   background-image: url(../image/Body_Backgound.png);
   background-repeat: no-repeat;
   background-size: cover;
@@ -24,13 +25,18 @@ body {
   color: white;
 }
 body .logo {
+  z-index: 1;
   position: absolute;
   max-width: 40rem;
   width: 100%;
-  bottom: 4%;
+  top: 4%;
+  left: 2%;
   filter: drop-shadow(0px 1rem 1rem rgba(0, 0, 0, 0.75));
 }
 body main {
+  -webkit-animation: opacify 1s ease;
+          animation: opacify 1s ease;
+  z-index: 10;
   position: relative;
   display: flex;
   align-items: center;
@@ -38,9 +44,13 @@ body main {
   width: 100%;
   max-width: 80.6rem;
   margin: 0 auto;
-  margin-top: 6rem;
   max-height: 65.73rem;
   height: 65.73rem;
+}
+@media (max-width: 1440px) {
+  body main {
+    transform: scale(0.8);
+  }
 }
 body main .console {
   width: 100%;
@@ -101,14 +111,14 @@ body main #down_screen {
   z-index: 3;
   position: absolute;
   margin: 0 auto;
-  width: 48%;
+  width: 47%;
   height: 100%;
 }
 body main #down_screen .screen_content {
   margin: 0 auto;
   margin-bottom: 11%;
   width: 100%;
-  height: 42.5%;
+  height: 42.7%;
   background-image: linear-gradient(180deg, #f8c8a4 12.5%, #f8ad93 12.5%, #f8ad93 50%, #f8c8a4 50%, #f8c8a4 62.5%, #f8ad93 62.5%, #f8ad93 100%);
   background-size: 0.8rem 0.8rem;
   border: 0.7rem solid #00c15d;
@@ -125,7 +135,7 @@ body main #down_screen .screen_content .top .pokeinfo {
   z-index: 2;
   display: flex;
   align-items: center;
-  width: 70%;
+  width: 73%;
   position: absolute;
   height: 101%;
   background-color: #e0d898;
@@ -134,10 +144,13 @@ body main #down_screen .screen_content .top .pokeinfo {
   font-size: 1.8rem;
   text-shadow: 2px 2px 0px rgb(107, 107, 107);
 }
-body main #down_screen .screen_content .top .pokeinfo button {
+body main #down_screen .screen_content .top button {
   position: absolute;
-  left: 86%;
-  padding: 4.5% 3.5%;
+  left: 84%;
+  max-width: 2.05rem;
+  width: 100%;
+  max-height: 2.65rem;
+  height: 100%;
   background-color: #f8f0e8;
 }
 body main #down_screen .screen_content .top .buttons {
@@ -148,12 +161,7 @@ body main #down_screen .screen_content .top .buttons {
   height: 101%;
 }
 body main #down_screen .screen_content .top .buttons button {
-  position: absolute;
-  max-width: 2.05rem;
-  width: 100%;
-  max-height: 2.65rem;
-  height: 100%;
-  left: 72%;
+  left: 73%;
   background-color: #f8f0e8;
 }
 body main #down_screen .screen_content .mid {
@@ -167,14 +175,13 @@ body main #down_screen .screen_content .mid .left {
   width: 55%;
   background-image: linear-gradient(180deg, #f5f5f5 12.5%, #e8e8e8 12.5%, #e8e8e8 50%, #f5f5f5 50%, #f5f5f5 62.5%, #e8e8e8 62.5%, #e8e8e8 100%);
   background-size: 1.6rem 1.6rem;
-  gap: 2rem;
+  gap: 0.5rem;
   border: 0.7rem solid #c8a8e8;
   box-shadow: 2.5px 2.5px 0px 2.5px rgb(248, 232, 208);
 }
 body main #down_screen .screen_content .mid .left .level_name {
   height: 15%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
   background-color: #c8a8e8;
   border-bottom: 0.7rem solid #c8a8e8;
@@ -182,6 +189,10 @@ body main #down_screen .screen_content .mid .left .level_name {
 body main #down_screen .screen_content .mid .left .level_name p {
   text-shadow: 2px 2px 0px rgb(107, 107, 107);
   text-transform: uppercase;
+}
+body main #down_screen .screen_content .mid .left .idP {
+  color: rgb(97, 95, 95);
+  text-shadow: 2px 2px 0px rgb(212, 211, 211);
 }
 body main #down_screen .screen_content .mid .left .pokemonSprite {
   display: flex;
@@ -215,6 +226,9 @@ body main #down_screen .screen_content .mid .right ul .stats_number {
   background-color: #f8f0e8;
   color: rgb(97, 95, 95);
   padding: 0.2rem;
+  font-size: 1.2rem;
+  width: 100%;
+  max-width: 8rem;
 }
 body main #down_screen .screen_content .mid .right .statsName {
   justify-content: space-around;
@@ -223,6 +237,7 @@ body main #down_screen .screen_content .mid .right .statsName {
   margin-left: 1%;
 }
 body main #down_screen .screen_content .mid .right .statsName li {
+  font-size: 1.2rem;
   display: flex;
   align-items: center;
   text-align: center;
@@ -251,6 +266,7 @@ body main #down_screen .screen_content .down .spanDiv span {
   display: block;
   margin: 0 0.3rem;
   width: 50%;
+  text-align: center;
   background-color: #f8f0e8;
   padding: 1% 2%;
   margin-bottom: 0;
@@ -294,6 +310,9 @@ body main #down_screen .screen_content .down .pokeSearch .buttons {
   width: 100%;
   height: 100%;
 }
+body main #down_screen .screen_content .down .pokeSearch .buttons .active {
+  transform: scale(0.9);
+}
 body main #down_screen .screen_content .down .pokeSearch .buttons button {
   text-align: center;
   background-color: #68c0c8;
@@ -303,6 +322,9 @@ body main #down_screen .screen_content .down .pokeSearch .buttons button {
   height: 100%;
   padding: 2% 0;
   color: #000;
+}
+body main #down_screen .screen_content .down .pokeSearch .buttons button:hover {
+  filter: brightness(110%);
 }
 
 button {
@@ -323,4 +345,22 @@ button {
 .pixel-cornersInput {
   -webkit-clip-path: polygon(0px 8px, 4px 8px, 4px 4px, 8px 4px, 8px 0px, calc(100% - 8px) 0px, calc(100% - 8px) 4px, calc(100% - 4px) 4px, calc(100% - 4px) 8px, 100% 8px, 100% calc(100% - 8px), calc(100% - 4px) calc(100% - 8px), calc(100% - 4px) calc(100% - 4px), calc(100% - 8px) calc(100% - 4px), calc(100% - 8px) 100%, 8px 100%, 8px calc(100% - 4px), 4px calc(100% - 4px), 4px calc(100% - 8px), 0px calc(100% - 8px));
           clip-path: polygon(0px 8px, 4px 8px, 4px 4px, 8px 4px, 8px 0px, calc(100% - 8px) 0px, calc(100% - 8px) 4px, calc(100% - 4px) 4px, calc(100% - 4px) 8px, 100% 8px, 100% calc(100% - 8px), calc(100% - 4px) calc(100% - 8px), calc(100% - 4px) calc(100% - 4px), calc(100% - 8px) calc(100% - 4px), calc(100% - 8px) 100%, 8px 100%, 8px calc(100% - 4px), 4px calc(100% - 4px), 4px calc(100% - 8px), 0px calc(100% - 8px));
+}
+
+@-webkit-keyframes opacify {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes opacify {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }/*# sourceMappingURL=main.css.map */

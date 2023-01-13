@@ -28,11 +28,11 @@
                 <div class="top">
                     <div class="pixel-corners pokeinfo">
                         <p>POKEMON INFO</p>
-                        <button class="pixel-cornersLi"></button> 
+                        <button class="pixel-cornersLi js_showMainStats"></button> 
                     </div> 
                     <div class="buttons pixel-corners">
-                        <button class="pixel-cornersLi"></button>
-                        <button class="pixel-cornersLi"></button>
+                        <button class="pixel-cornersLi js_showHPstats"></button>
+                        
                     </div>
                     
                     
@@ -40,27 +40,26 @@
                 <div class="mid">
                     <div class="left">
                         <div class="level_name">
-                            <p>ID <span class="pokeID">5</span></p>
                             <p class="pokemonName"></p>
                         </div>
-        
+                        <p class="idP">ID <span class="pokeID">5</span></p>
 
-                         <img class="pokemonSprite" src="image/pokemonExample2.gif" alt="">
+                        <img class="pokemonSprite" src="image/pokemonExample2.gif" alt="">
                         
                     </div>
                     <div class="right">
                         <ul class="statsName">
-                            <li>HP</li>
-                            <li>ATTACK</li>
-                            <li>DEFENSE</li>
-                            <li>SP-ATK</li>
-                            <li>SP-DEF</li>
-                            <li>SPEED</li>
+                            <li >No</li>
+                            <li>NAME</li>
+                            <li>TYPE</li>
+                            <li>HEIGHT</li>
+                            <li>WEIGHT</li>
+                            <li>EXP</li>
                         </ul>
                         <ul >
                             <li class="stats_number pixel-cornersLi"></li>
                             <li class="stats_number pixel-cornersLi"></li>
-                            <li class="stats_number pixel-cornersLi"></li>
+                            <li class="stats_number pixel-cornersLi"><p class="statsNumberTypes"></p><p class="statsNumberTypes"></p></li>
                             <li class="stats_number pixel-cornersLi"></li>
                             <li class="stats_number pixel-cornersLi"></li>
                             <li class="stats_number pixel-cornersLi"></li>
@@ -71,15 +70,15 @@
 
                 <div class="down">
                     <div class="spanDiv">
-                        <span class="pixel-cornersLi">SELECT POKEMON</span>
+                        <span class="pixel-cornersLi">SELECTION</span>
                     </div>
                     <div class="pokeSearch pixel-cornersLi">
                         <form class="form">
                             <input class="searchForPokemon pixel-cornersInput" type="text" placeholder="TYPE HERE">
                         </form>
                         <div class="buttons">
-                            <button id="js_btn_prev" class="pixel-cornersLi">&lt;Prev</button>
-                            <button id="js_btn_next" class="pixel-cornersLi">Next&gt;</button>
+                            <button id="js_btn_prev"  class="pixel-cornersLi">&lt;Prev</button>
+                            <button id="js_btn_next"  class="pixel-cornersLi">Next&gt;</button>
                         </div>
                     </div>
                 </div>

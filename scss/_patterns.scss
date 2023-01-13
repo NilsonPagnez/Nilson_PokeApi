@@ -89,3 +89,11 @@
     0px calc(100% - 8px)
     );
   }
+
+@keyframes opacify{
+  from{
+    opacity: 0;
+  }to{
+    opacity: 1;
+  }
+}
