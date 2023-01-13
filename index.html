@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex 3DS</title>
+    <link rel="stylesheet" href="scss/main.css">
+</head>
+<body>
+    <main>
+        <img class="console" src="image/image_3ds.png" alt="">
+        <section id="up_screen">
+            <div class="screen_content">
+                <p class="textError">
+                    <span>
+                        404
+                    </span>
+                    <span>
+                        ERROR
+                    </span>
+                </p>
+                <img class="pokemonSprite" src="image/pokemonExemple.gif" alt="">
+            </div>
+        </section>
+        <section id="down_screen">
+            <div class="screen_content">
+                <div class="top">
+                    <div class="pixel-corners">
+                        POKEMON INFO
+                    </div> 
+                </div>
+                <div class="mid">
+                    <div class="left">
+                        <div class="level_name">
+                            <p>ID <span class="pokeID">5</span></p>
+                            <p class="pokemonName"></p>
+                        </div>
+        
+
+                         <img class="pokemonSprite" src="image/pokemonExample2.gif" alt="">
+                        
+                    </div>
+                    <div class="right">
+                        <ul class="statsName">
+                            <li>HP</li>
+                            <li>ATTACK</li>
+                            <li>DEFENSE</li>
+                            <li>SP-ATK</li>
+                            <li>SP-DEF</li>
+                            <li>SPEED</li>
+                        </ul>
+                        <ul >
+                            <li class="stats_number pixel-cornersLi"></li>
+                            <li class="stats_number pixel-cornersLi"></li>
+                            <li class="stats_number pixel-cornersLi"></li>
+                            <li class="stats_number pixel-cornersLi"></li>
+                            <li class="stats_number pixel-cornersLi"></li>
+                            <li class="stats_number pixel-cornersLi"></li>
+                            
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="down">
+                    <div class="spanDiv">
+                        <span class="pixel-cornersLi">SELECT POKEMON</span>
+                    </div>
+                    <div class="pokeSearch pixel-cornersLi">
+                        <form class="form">
+                            <input class="searchForPokemon pixel-cornersInput" type="text" placeholder="TYPE HERE">
+                        </form>
+                        <div class="buttons">
+                            <button id="js_btn_prev" class="pixel-cornersLi">&lt;Prev</button>
+                            <button id="js_btn_next" class="pixel-cornersLi">Next&gt;</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+        <img class="logo" src="image/pokemon-logo.png" alt="">
+
+        <script src="js/script.js"></script>
+</body>
+</html>

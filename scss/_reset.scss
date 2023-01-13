@@ -1,0 +1,14 @@
+@font-face {
+    font-family: PixelFont;
+    src: url(../dogicapixel.otf);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: PixelFont, Arial, Helvetica, sans-serif;
+    list-style: none;
+}
+html{
+    font-size: 62.5%;
+}
