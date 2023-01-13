@@ -20,7 +20,6 @@ body {
   background-image: url(../image/Body_Backgound.png);
   background-repeat: no-repeat;
   background-size: cover;
-  overflow: hidden;
   font-size: clamp(0.625rem, -0.5469rem + 3.75vw, 1.5625rem);
   color: white;
 }
@@ -34,23 +33,29 @@ body .logo {
 body main {
   position: relative;
   display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   max-width: 80.6rem;
   margin: 0 auto;
   margin-top: 6rem;
+  max-height: 65.73rem;
+  height: 65.73rem;
 }
 body main .console {
   width: 100%;
   max-width: -webkit-min-content;
   max-width: -moz-min-content;
   max-width: min-content;
+  height: 100%;
   filter: drop-shadow(0px 0.8rem 2rem rgba(0, 0, 0, 0.85));
   z-index: 2;
 }
 body main #up_screen {
   z-index: 1;
   position: absolute;
-  width: 100%;
+  padding-top: 5%;
+  width: 80%;
   margin: 0 auto;
   height: 100%;
 }
@@ -58,13 +63,13 @@ body main #up_screen .screen_content {
   position: relative;
   display: flex;
   margin: 0 auto;
-  width: 67%;
+  width: 100%;
   max-height: 50.5%;
   height: 100%;
   background-image: url(../image/pokemon_Backgound.png);
   background-size: cover;
   background-position: center;
-  padding-top: 10%;
+  padding-top: 5%;
   align-items: center;
 }
 body main #up_screen .screen_content .textError {
@@ -91,19 +96,19 @@ body main #up_screen .screen_content .pokemonSprite {
   height: 100%;
 }
 body main #down_screen {
+  display: flex;
+  align-items: flex-end;
   z-index: 3;
   position: absolute;
-  display: block;
   margin: 0 auto;
-  width: 100%;
-  max-height: 49.5%;
+  width: 48%;
   height: 100%;
-  bottom: -0.3rem;
 }
 body main #down_screen .screen_content {
   margin: 0 auto;
-  width: 54%;
-  height: 87.5%;
+  margin-bottom: 11%;
+  width: 100%;
+  height: 42.5%;
   background-image: linear-gradient(180deg, #f8c8a4 12.5%, #f8ad93 12.5%, #f8ad93 50%, #f8c8a4 50%, #f8c8a4 62.5%, #f8ad93 62.5%, #f8ad93 100%);
   background-size: 0.8rem 0.8rem;
   border: 0.7rem solid #00c15d;
@@ -116,7 +121,8 @@ body main #down_screen .screen_content .top {
   overflow: hidden;
   background-color: #0078c0;
 }
-body main #down_screen .screen_content .top div {
+body main #down_screen .screen_content .top .pokeinfo {
+  z-index: 2;
   display: flex;
   align-items: center;
   width: 70%;
@@ -124,9 +130,31 @@ body main #down_screen .screen_content .top div {
   height: 101%;
   background-color: #e0d898;
   left: -2rem;
-  padding-left: 30px;
+  padding-left: 6.3%;
   font-size: 1.8rem;
   text-shadow: 2px 2px 0px rgb(107, 107, 107);
+}
+body main #down_screen .screen_content .top .pokeinfo button {
+  position: absolute;
+  left: 86%;
+  padding: 4.5% 3.5%;
+  background-color: #f8f0e8;
+}
+body main #down_screen .screen_content .top .buttons {
+  display: flex;
+  align-items: center;
+  width: 85%;
+  background-color: #68c0c8;
+  height: 101%;
+}
+body main #down_screen .screen_content .top .buttons button {
+  position: absolute;
+  max-width: 2.05rem;
+  width: 100%;
+  max-height: 2.65rem;
+  height: 100%;
+  left: 72%;
+  background-color: #f8f0e8;
 }
 body main #down_screen .screen_content .mid {
   display: flex;
@@ -210,18 +238,18 @@ body main #down_screen .screen_content .down {
   border-bottom: 0.5rem solid #f8e8d0;
   border-right: 0.5rem solid #f8e8d0;
   position: relative;
-  padding-top: 30px;
+  padding-top: 3rem;
 }
 body main #down_screen .screen_content .down .spanDiv {
   position: absolute;
   height: 30%;
   top: 4%;
-  width: 100%;
+  width: 112%;
 }
 body main #down_screen .screen_content .down .spanDiv span {
-  height: 100%;
+  height: 130%;
   display: block;
-  margin: 0 0.4rem;
+  margin: 0 0.3rem;
   width: 50%;
   background-color: #f8f0e8;
   padding: 1% 2%;
@@ -234,7 +262,7 @@ body main #down_screen .screen_content .down .pokeSearch {
   align-items: center;
   justify-content: space-between;
   background-color: #f8f0e8;
-  margin: 0 0.4rem;
+  margin: 0 0.3rem;
   height: 85%;
   width: 100%;
 }
@@ -279,6 +307,7 @@ body main #down_screen .screen_content .down .pokeSearch .buttons button {
 
 button {
   all: unset;
+  cursor: pointer;
 }
 
 .pixel-cornersLi {
