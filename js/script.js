@@ -245,16 +245,4 @@ mouseDown(prev, next)
 mouseUp(prev,next)
 
 
-
-/*
-function changeLi (){
-    statsNames.forEach((category, index) =>{
-        if(category.classList = active ){
-            index[0].innerHTML = 'asda'
-        }
-
-    })
-}
-changeLi()
-*/
 renderPokemon(pokemonSearch)
