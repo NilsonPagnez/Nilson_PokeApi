@@ -157,9 +157,10 @@ body{
                         left: 84%;
                         max-width: 2.05rem;
                         width: 100%;
-                        max-height: 2.65rem;
+                        max-height: 2.25rem;
                         height: 100%;
                         background-color:#f8f0e8;
+                        
 
                     }
                     .buttons{
@@ -246,6 +247,10 @@ body{
                                 font-size: 1.2rem;
                                 width: 100%;
                                 max-width: 8rem;
+                                
+                                &:nth-child(2){
+                                    text-transform: capitalize;
+                                }
                             }
                         }
                         .statsName{
@@ -253,6 +258,7 @@ body{
                             padding-bottom: 2%;
                             padding-top: 2%;
                             margin-left: 1%;
+                            
                             li{
                                 font-size: 1.2rem;
                                 display: flex;

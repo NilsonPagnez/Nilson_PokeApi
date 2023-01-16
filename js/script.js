@@ -15,7 +15,8 @@ const btnShowHpStats = document.querySelector('.js_showHPstats')
 
 const statsNames = document.querySelectorAll(('.statsName li'))
 
-
+const typeMargin = document.querySelector('.typeDistance')
+const statsNumberTypes = document.querySelectorAll('.statsNumberTypes')
 pokemonSearch = 1
 
 
@@ -62,33 +63,7 @@ const renderPokemon = async (pokemon) =>{
         });
 
 
-        
-        pokeStats[0].innerHTML=  infoPokemon.pokeId
-        pokeStats[1].innerHTML=  infoPokemon.pokeName
-        if(infoPokemon.types.length == 2){
-        pokeStatsTypes.forEach((tipo, index) =>{
-            
-            tipo.innerHTML = infoPokemon.types[index].type.name
-            
-            
-        })
-        }else{
-            pokeStatsTypes[0].innerHTML =  infoPokemon.types[0].type.name
-            pokeStatsTypes[1].innerHTML =  ''
-        
-        }
-        pokeStats[3].innerHTML=  `${infoPokemon.height / 10} m` 
-        pokeStats[4].innerHTML=  `${infoPokemon.weight / 10} kg`
-        pokeStats[5].innerHTML=  infoPokemon.exp
-        
-
-        pokemonName.innerHTML = infoPokemon.pokeName
-        idPokemon.innerHTML = infoPokemon.pokeId
-        input.value =""
-        screenError.style.display = 'none'
-
-        
-        btnMainStats.addEventListener('click', async function MainStats(){
+        const mainInfo = function() {
             statsNames[0].innerHTML = 'No'
             statsNames[1].innerHTML = 'NAME'
             statsNames[2].innerHTML = 'TYPE'
@@ -96,27 +71,55 @@ const renderPokemon = async (pokemon) =>{
             statsNames[4].innerHTML = 'WEIGHT'
             statsNames[5].innerHTML = 'EXP'
 
+
             pokeStats[0].innerHTML=  infoPokemon.pokeId
             pokeStats[1].innerHTML=  infoPokemon.pokeName
-            
             if(infoPokemon.types.length == 2){
-                pokeStatsTypes.forEach((tipo, index) =>{
-                    
-                    tipo.innerHTML = infoPokemon.types[index].type.name
-                    
-                    
-                })
-                }else{
-                    pokeStatsTypes[0].innerHTML =  infoPokemon.types[0].type.name
-                    pokeStatsTypes[1].innerHTML =  ''
+            pokeStatsTypes.forEach((tipo, index) =>{
                 
-                }
+                tipo.innerHTML = infoPokemon.types[index].type.name
+                typeMargin.style.margin = '0.5rem 0'
+                statsNumberTypes.forEach(tipo =>{
+                    tipo.style.textAlign = 'center'
+                })
+                
+            })
+            }else{
+                pokeStatsTypes[0].innerHTML =  infoPokemon.types[0].type.name
+                pokeStatsTypes[1].innerHTML =  ''
+                typeMargin.style.margin = '0'
+                statsNumberTypes.forEach(tipo =>{
+                    tipo.style.textAlign = 'start'
+                })
+            
+            }
             pokeStats[3].innerHTML=  `${infoPokemon.height / 10} m` 
             pokeStats[4].innerHTML=  `${infoPokemon.weight / 10} kg`
             pokeStats[5].innerHTML=  infoPokemon.exp
+            
+            btnMainStats.style.backgroundColor = 'white'
+            btnShowHpStats.style.backgroundColor = '#004890'
+    
+            pokemonName.innerHTML = infoPokemon.pokeName
+            idPokemon.innerHTML = infoPokemon.pokeId
+        }
+        mainInfo()
+
+
+        input.value =""
+        screenError.style.display = 'none'
+
+        
+        btnMainStats.addEventListener('click', async function MainStats(){
+        
+
+            mainInfo()
+
         
             
         })
+
+        
         btnShowHpStats.addEventListener('click', function HPstats(){
             statsNames[0].innerHTML = 'HP'
             statsNames[1].innerHTML = 'ATTACK'
@@ -136,7 +139,11 @@ const renderPokemon = async (pokemon) =>{
                 }
     
             })
-            
+            statsNumberTypes.forEach(tipo =>{
+                tipo.style.textAlign = 'start'
+            })
+            btnShowHpStats.style.backgroundColor = 'white'
+            btnMainStats.style.backgroundColor = '#004890'
         })
         
        
@@ -219,6 +226,7 @@ next.addEventListener('click', ()=>{
 const mouseDown = function (btn, btn2){
     btn.addEventListener('mousedown', ()=>{
         btn.style.transform ="scale(0.9)"
+
     } )
     btn2.addEventListener('mousedown', ()=>{
         btn2.style.transform ="scale(0.9)"
